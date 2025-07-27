@@ -1,9 +1,12 @@
+const express  = require("express");
+const rootRouter = require("./routes/RouteIndex");
+const cors = require("cors");
+const app = express();
+
+app.use(cors());
 app.use(express.json());
 app.use('/api/v1',rootRouter);
-const path = require("path");
 
-const uploadImagesPath = path.join(__dirname, process.env.UPLOAD_DIR, "uploadedImages");
-app.use("/uploadedImages", express.static(uploadImagesPath));
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
+});
