@@ -8,7 +8,7 @@ const Dashboard = () => {
   useEffect(() => {
     const products = async () => {
           try {
-              const productsRes = await axios.get("http://localhost:3000/api/v1/product/bulk",{headers : {
+              const productsRes = await axios.get("https://bytebazaar-backend.onrender.com/api/v1/product/bulk",{headers : {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }});
               if (productsRes.status === 200) setProducts(productsRes.data.userProducts);
@@ -61,7 +61,7 @@ const Dashboard = () => {
                   Update
                 </button>
                 <button onClick={async()=>{
-                  const response = await axios.delete("http://localhost:3000/api/v1/product/delete-product/"+product._id, {headers : { 
+                  const response = await axios.delete("https://bytebazaar-backend.onrender.com/api/v1/product/delete-product/"+product._id, {headers : { 
                       Authorization: "Bearer " + localStorage.getItem("token")
                     }});
                     if(response.status === 200){
@@ -78,7 +78,7 @@ const Dashboard = () => {
                     <button onClick={async()=>{
                       try {
                         const body = {};
-                        const response2 = await axios.post("http://localhost:3000/api/v1/marketplace/publish-product/"+product._id,body, {headers : { 
+                        const response2 = await axios.post("https://bytebazaar-backend.onrender.com/api/v1/marketplace/publish-product/"+product._id,body, {headers : { 
                             Authorization: "Bearer " + localStorage.getItem("token")
                         }});
                         if(response2.status === 200){
