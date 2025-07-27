@@ -2,11 +2,15 @@ const express  = require("express");
 const rootRouter = require("./routes/RouteIndex");
 const cors = require("cors");
 const app = express();
-
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use('/api/v1',rootRouter);
+const path = require("path");
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
-});
+const uploadImagesPath = path.join(__dirname, process.env.UPLOAD_DIR, "uploadedImages");
+app.use("/uploadedImages", express.static(uploadImagesPath));
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
