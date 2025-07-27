@@ -4,7 +4,11 @@ const cors = require("cors");
 const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
-app.use(cors());
+app.use(cors({
+  origin: "https://bytebazaar-frontend.onrender.com", 
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true, // Optional - for cookies
+}));
 app.use(express.json());
 app.use('/api/v1',rootRouter);
 const path = require("path");
