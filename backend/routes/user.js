@@ -2,7 +2,8 @@ const express = require('express');
 const { User } = require('../db');
 const { Product } = require('../db');
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = require("../config");
+require('dotenv').config();
+const JWT_SECRET = process.env.JWT_SECRET;
 const zod = require('zod');
 const router = express.Router();
 

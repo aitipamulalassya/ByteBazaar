@@ -2,13 +2,13 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-const My_dirName = "C:\\Users\\user\\Downloads\\bytebazzar\\ByteBazaar\\frontend"
-//Example
-// const My_dirName = "C:\\Users\\rahul\\OneDrive\\Desktop\\gumroad\\frontend"
+require('dotenv').config();
+const My_dirName = process.env.UPLOAD_DIR;
+
 const fs = require("fs");
 const { authMiddleware } = require("../middlewares/Authmiddleware");
 
-const uploadDir = path.resolve(__dirname, My_dirName + "\\public\\uploadedImages");
+const uploadDir = path.resolve(__dirname, My_dirName + "\\uploadedImages");
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
 }

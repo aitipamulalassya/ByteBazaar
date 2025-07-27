@@ -2,14 +2,12 @@ const express  = require("express");
 const rootRouter = require("./routes/RouteIndex");
 const cors = require("cors");
 const app = express();
-
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true
-}));
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
+app.use(cors());
 app.use(express.json());
 app.use('/api/v1',rootRouter);
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
