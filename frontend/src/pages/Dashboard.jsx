@@ -44,7 +44,7 @@ const Dashboard = () => {
             >
               <div className="border-2  border-black mb-2">
                 <img
-                  src={"/uploadedImages/" + product.productThumbnail}
+                  src={"https://bytebazaar-backend.onrender.com/uploadedImages/" + product.productThumbnail}
                   alt="Image"
                   className="w-full h-50"
                 />
