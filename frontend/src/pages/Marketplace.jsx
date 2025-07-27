@@ -6,7 +6,7 @@ function ProductCard({ productName, productDescription, price, productThumbnail 
     <div className="border-2 border-black shadow-[4px_4px_0px_0px_black] p-4 w-72 rounded-md bg-white hover:shadow-lg transition-shadow duration-300">
       <div className="border-2 border-black shadow-[4px_4px_0px_0px_black] mb-3 h-40 flex items-center justify-center bg-white rounded-md overflow-hidden">
         <img
-          src={"uploadedImages/" + productThumbnail}
+          src={"https://bytebazaar-backend.onrender.com/uploadedImages/" + productThumbnail}
           alt={productName}
           className="max-h-full max-w-full object-contain"
         />
