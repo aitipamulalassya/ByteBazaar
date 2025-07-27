@@ -8,7 +8,7 @@ const My_dirName = process.env.UPLOAD_DIR;
 const fs = require("fs");
 const { authMiddleware } = require("../middlewares/Authmiddleware");
 
-const uploadDir = path.resolve(__dirname, My_dirName + "\\uploadedImages");
+const uploadDir = path.resolve(__dirname,"..", My_dirName + "\\uploadedImages");
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
 }
