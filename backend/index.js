@@ -6,8 +6,19 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://bytebazaar-frontend.onrender.com"
+];
+
 app.use(cors({
-  origin: "https://bytebazaar-frontend.onrender.com", 
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 }));
