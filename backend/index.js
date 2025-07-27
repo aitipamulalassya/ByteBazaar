@@ -12,8 +12,6 @@ const uploadImagesPath = path.join(__dirname, process.env.UPLOAD_DIR, "uploadedI
 app.use("/uploadedImages", express.static(uploadImagesPath));
 
 // Example: Import routes
-const imageUploadRoutes = require("./routes/Imageupload"); // Update the path as needed
-app.use("/api", imageUploadRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 4000;
