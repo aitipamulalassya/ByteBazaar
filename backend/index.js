@@ -10,7 +10,7 @@ app.use('/api/v1',rootRouter);
 const path = require("path");
 app.use(
   "/uploadedImages",
-  express.static(path.join(__dirname, process.env.UPLOAD_DIR))
+  express.static(path.join(__dirname, "routes", "uploads", "uploadedImages"))
 );
 
 app.listen(PORT, () => {
