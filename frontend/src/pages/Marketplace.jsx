@@ -35,7 +35,7 @@ const Marketplace = () => {
     const fetchProducts = async () => {
       try {
         const productsRes = await axios.get(
-          "http://localhost:3000/api/v1/marketplace/bulk",
+          "https://bytebazaar-backend.onrender.com/api/v1/marketplace/bulk",
           {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
