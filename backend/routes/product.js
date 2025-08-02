@@ -22,7 +22,7 @@ router.post('/create-product',authMiddleware, async (req, res) => {
     });
 });
 
-router.put('/new-product',authMiddleware, async (req, res) => {
+router.post('/new-product',authMiddleware, async (req, res) => {
     try {
         const body = req.body;
         const id  = req.userId;  
