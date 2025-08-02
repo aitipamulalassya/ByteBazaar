@@ -49,7 +49,7 @@ const CreateProduct = () => {
         price
       };
 
-      await axios.put("https://bytebazaar-backend.onrender.com/api/v1/product/new-product", productData, {
+      await axios.post("https://bytebazaar-backend.onrender.com/api/v1/product/new-product", productData, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token")
         }
