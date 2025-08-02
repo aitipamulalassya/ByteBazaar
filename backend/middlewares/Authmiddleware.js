@@ -7,7 +7,7 @@ const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   // Check if header exists and starts with "Bearer "
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+  if (!authHeader || !authHeader.startsWith('Bearer')) {
     return res.status(403).json({ message: "Authentication failed: Invalid token format" });
   }
 
