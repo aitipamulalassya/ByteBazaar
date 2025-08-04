@@ -66,7 +66,7 @@ const Dashboard = () => {
                     }});
                     if(response.status === 200){
                       alert("Product Deleted successfully!");
-                      window.location.reload();
+                     
                     }else{
                       alert("Failed to delete product. Please try again.");
                     }
