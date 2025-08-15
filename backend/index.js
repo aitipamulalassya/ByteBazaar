@@ -1,4 +1,4 @@
-this is my index.js backend const express = require("express");
+const express = require("express");
 const rootRouter = require("./routes/RouteIndex");
 const cors = require("cors");
 const app = express();
