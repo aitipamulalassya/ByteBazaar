@@ -1,14 +1,17 @@
 const express = require("express");
-const rootRouter = require("./routes/RouteIndex");
 const cors = require("cors");
-const app = express();
-require('dotenv').config();
+const path = require("path");
+require("dotenv").config();
 
+const rootRouter = require("./routes/RouteIndex");
+
+const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Allowed CORS origins
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://bytebazaar-frontend.onrender.com"
+  "http://localhost:5173", // Local dev (Vite)
+  "https://bytebazaar-frontend.onrender.com" // Render frontend
 ];
 
 app.use(cors({
@@ -24,14 +27,27 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use('/api/v1', rootRouter);
 
-const path = require("path");
+// API routes
+app.use("/api/v1", rootRouter);
+
+// Public uploads folder
 const publicDir = path.join(__dirname, process.env.UPLOAD_DIR || "public");
-
-// 👇 Serve static files from /uploadedImages and /uploadedFiles
 app.use("/uploadedImages", express.static(path.join(publicDir, "uploadedImages")));
 
+// ===== Serve frontend if in production =====
+if (process.env.NODE_ENV === "production") {
+  const frontendPath = path.join(__dirname, "frontend", "dist"); // For Vite builds
+  // const frontendPath = path.join(__dirname, "frontend", "build"); // For CRA builds
+
+  app.use(express.static(frontendPath));
+
+  // Catch-all for client-side routing
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"));
+  });
+}
+
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
