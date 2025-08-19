@@ -21,6 +21,7 @@
     "nodejs-file-downloader": "^4.13.0",
     "router": "^2.2.0",
     "zod": "^3.24.3",
-    "dotenv": "^17.2.1"
+    "dotenv": "^17.2.1",
+   "path": "^0.12.7"
   }
 }
