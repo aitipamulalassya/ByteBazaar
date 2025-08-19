@@ -21,7 +21,7 @@ const UpdateProduct = () => {
                 price : price || "",
             };
             setLoading(true);
-            await axios.put("http://localhost:3000/api/v1/product/update-product/"+pid, productData ,{headers : {
+            await axios.put("https://bytebazaar2.onrender.com/api/v1/product/update-product/"+pid, productData ,{headers : {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }});
             alert("Product Updated successfully!");
