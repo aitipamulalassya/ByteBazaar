@@ -4,7 +4,7 @@ function ProductCard({ productName, productDescription, price, productThumbnail 
     return (
       <div className="border-2 border-black shadow-[4px_4px_0px_0px_black] p-4 w-72">
         <div className="border-2 border-black shadow-[4px_4px_0px_0px_black] mb-3 h-40 flex items-center justify-center bg-white">
-          <img src={"https://bytebazaar2.onrender.com" + "/uploads/" + product.productThumbnail} alt={productName} className="max-h-full max-w-full object-contain" />
+          <img src={"https://bytebazaar2.onrender.com" + "/uploads/" +productThumbnail} alt={productName} className="max-h-full max-w-full object-contain" />
         </div>
         <h3 className="font-semibold text-lg mb-1">{productName}</h3>
         <p className="text-md mb-1">${price}</p>
