@@ -1,5 +1,6 @@
 const express  = require("express");
 const rootRouter = require("./routes/RouteIndex");
+const path=require('path');
 const cors = require("cors");
 const app = express();
 
