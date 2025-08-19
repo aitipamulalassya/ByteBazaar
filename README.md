@@ -30,9 +30,8 @@ Create a `.env` file in the `backend` folder and add the following:
 
 ```env
 PORT=3000
-MONGO_URI=your_mongo_uri_here
-JWT_SECRET=your_jwt_secret_here
-UPLOAD_DIR=public
+MONGODB_URL=your_mongo_uri_here
+
 ```
 ---
 
