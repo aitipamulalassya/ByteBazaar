@@ -20,6 +20,7 @@
     "multer": "^1.4.5-lts.2",
     "nodejs-file-downloader": "^4.13.0",
     "router": "^2.2.0",
-    "zod": "^3.24.3"
+    "zod": "^3.24.3",
+    "dotenv": "^17.2.1"
   }
 }
