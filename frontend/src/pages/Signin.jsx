@@ -24,7 +24,7 @@ const Signin = () => {
         <div className="flex space-x-3">
           <button onClick={async()=>{
             try {
-              const response = await axios.post("http://localhost:3000/api/v1/user/signin", {
+              const response = await axios.post("https://bytebazaar2.onrender.com/api/v1/user/signin", {
               username,
               password,
               });
